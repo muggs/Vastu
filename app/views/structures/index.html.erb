@@ -1,0 +1,20 @@
+<table>
+<tr>
+	<td> Name </td>
+	<td> Type </td>
+	<td> Bedroom </td>
+	<td> Bathroom </td>
+	<td> Hall </td>
+	<td> Kitchen </td>
+</tr>
+<% @structures.each do |structure| %>
+<tr>
+<td><%=	structure.name %></td>
+<td><%=	structure.structure_type %></td>
+<td><%=	structure.bedroom_count %></td>
+<td><%=	structure.bathroom_count %></td>
+<td><%=	structure.hall_count %></td>
+<td><%=	structure.kitchen_count %></td>
+</tr>
+<% end %>
+</table>

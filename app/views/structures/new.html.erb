@@ -1,0 +1,49 @@
+<%= form_for(@structure) do |f| %>
+  <% if @structure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@structure.errors.count, "error") %> prohibited this structure from being saved:</h2>
+
+      <ul>
+      <% @structure.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :structure_type %><br />
+    <%= f.text_field :structure_type %>
+  </div>
+  <div class="field">
+    <%= f.label :bedroom_count %><br />
+    <%= f.select :bedroom_count, [1,2,3,4] %>
+  </div>
+  <div class="field">
+    <%= f.label :bathroom_count %><br />
+    <%= f.select :bathroom_count, [1,2,3,4] %>
+  </div>
+  <div class="field">
+    <%= f.label :hall_count %><br />
+    <%= f.select :hall_count, [0,1,2] %>
+  </div>
+  <div class="field">
+    <%= f.label :kitchen_count %><br />
+    <%= f.select :kitchen_count, [1,2] %>
+  </div>
+  <div class="field">
+    <%= f.label :floor_plan %><br />
+    <%= f.file_field :floor_plan %>
+    <%= f.hidden_field :floor_plan_cache %>
+  </div>
+  <div>
+    <%= image_tag(@structure.floor_plan_url, :width => 300) if @structure.floor_plan? %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h2> You have reached index page </h2>
+<br>
+<% if current_user.present? %>
+	  <%= content_for :sidebar do %>
+	  <ul class="nav">
+	  <li>  
+	    <%= link_to "Dashboard", pages_path %>
+	  </li>
+	  <li>
+	    <%= link_to "Add a Structure", new_structure_path %>
+	  </li>
+	  <% end %>
+	  </ul>    
+<% end %>
+
+<ul class="nav">
+<% @structures.each do |structure| %>
+<li><%=	link_to structure.name, structure_path(structure) %></li>
+<% end %>
+</ul>
+

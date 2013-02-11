@@ -1,0 +1,24 @@
+<div>
+Name : <%=	@structure.name %>
+<br>
+Type : <%=	@structure.structure_type %>
+<br>
+Bedroom : <%=	@structure.bedroom_count %>
+<br>
+Bathroom : <%=	@structure.bathroom_count %>
+<br>
+Hall : <%=	@structure.hall_count %>
+<br>
+Kitchen : <%=	@structure.kitchen_count %>
+<br>
+Floor Plan : 
+<div class="thumbnail">
+<%= image_tag(@structure.floor_plan_url, :width => 300) if @structure.floor_plan.present? %>
+</div>
+<br>
+Path : <%= @structure.floor_plan %>
+<br>
+</div>
+
+<%= link_to "Edit Structure", edit_structure_path(@structure) %>
+<%= link_to "Delete Structure", structure_path(@structure), :method => :delete, :data => {:confirm => "Are you sure?"} %>
