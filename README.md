@@ -1,3 +1,7 @@
+# Ruby on Rails Vastu Application
+
+This application deals with the Vastu Shastra rules and helps in determining how a home fits under that.
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
